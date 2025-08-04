@@ -21,7 +21,7 @@ html {
 }
 
 .page {
-  display: flex;
+  display: grid;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -73,7 +73,7 @@ ol {
   display: flex;
   flex-direction: row;
   width: 1140px;
-  height: 534px;
+  min-height: 534px;
   column-gap: 30px;
 }
 
@@ -87,8 +87,7 @@ ol {
 
 .content__list-container {
   height: 298px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -107,7 +106,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 390px;
+  min-width: 390px;
 }
 
 .content__video-card {
@@ -118,9 +117,9 @@ ol {
 
 .content__video-card-thumbnail {
   height: 103px;
-  min-width: 188px;
-  object-fit: fill; /* ? */
-  object-position: right;
+  min-width: 194px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-description-container {
@@ -145,14 +144,16 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 100%;
 }
 
 .content__video-card-description {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 16.2px;
+  line-height: 26px;
   -webkit-line-clamp: 1;
+  word-break: break-all;
 }
 
 .content__list-item {
@@ -167,8 +168,14 @@ ol {
   background-color: #545050;
 }
 
-.content__card-link:hover {
+.content__card-link:hover .content__video-card-title {
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 
 .content__card-link:focus {
@@ -218,7 +225,7 @@ ol {
   outline-offset: 2px;
 }
 
-.search-form__checkbox-list > .search-form__label:hover {
+.search-form__checkbox-list > .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -229,7 +236,7 @@ ol {
   font-size: 18px;
   font-weight: 400;
   color: #fff;
-  background-color: transparent;
+  background-color: inherit;
   border-style: solid;
   border-color: white;
   border-width: 1px 0;
@@ -267,7 +274,7 @@ ol {
 
 .search-form__submit-button {
   min-height: 34px;
-  width: 194px;
+  min-width: 194px;
   align-self: flex-end;
 }
 
@@ -283,7 +290,8 @@ ol {
 .result__video {
   height: 100%;
   width: 100%;
-  object-fit: fill; /* ? */
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Стили для кнопок */
