@@ -152,7 +152,7 @@ ol {
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 26px;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   word-break: break-all;
 }
 
@@ -225,7 +225,9 @@ ol {
   outline-offset: 2px;
 }
 
-.search-form__checkbox-list > .search-form__label:hover .search-form__label-text {
+.search-form__checkbox-list
+  > .search-form__label:hover
+  .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -273,7 +275,6 @@ ol {
 }
 
 .search-form__submit-button {
-  min-height: 34px;
   min-width: 194px;
   align-self: flex-end;
 }
@@ -304,6 +305,7 @@ ol {
   font-weight: 700;
   background-color: transparent;
   cursor: pointer;
+  min-height: 34px;
 }
 
 .button:hover {
@@ -318,8 +320,4 @@ ol {
 .button:active {
   background-color: #545050;
   text-decoration: none;
-}
-
-.more-button {
-  min-height: 34px;
 }
